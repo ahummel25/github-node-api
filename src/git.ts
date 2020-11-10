@@ -49,6 +49,6 @@ export const getRepoFile = async (
 
 		return res;
 	} catch (err) {
-		throw new Error(err.response?.data);
+		throw new Error(err);
 	}
 };
