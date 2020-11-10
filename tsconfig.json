@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "allowJs": false,
+        "allowSyntheticDefaultImports": true,
+        "alwaysStrict": true,
+        "esModuleInterop": true,
+        "lib": [
+            "es2020"
+        ],
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "noImplicitAny": true,
+        "outDir": "dist",
+        "sourceMap": true,
+        "strictNullChecks": true,
+        "target": "es2020"
+    },
+    "exclude": [
+        "node_modules"
+    ],
+    "include": [
+        "**/*.js",
+        "**/*.ts"
+    ]
+}
