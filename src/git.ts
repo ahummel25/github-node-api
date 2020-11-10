@@ -1,6 +1,7 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 
-const githubReposUrl = 'https://api.github.com/repos/ahummel25';
+const githubReposUrl = 'https://api.github.com/user/repos';
+const githubUserReposUrl = 'https://api.github.com/repos/ahummel25';
 const token = process.env.GITHUB_API_TOKEN;
 
 const config: AxiosRequestConfig = {
@@ -9,7 +10,7 @@ const config: AxiosRequestConfig = {
 };
 
 export const getRepo = async (
-	repo: string,
+	repo?: string,
 	fileContents?: string,
 ): Promise<AxiosResponse> => {
 	const fileContentsUrl = fileContents
@@ -18,9 +19,11 @@ export const getRepo = async (
 			: `/${fileContents}`
 		: '';
 
-	Object.assign(config, {
-		url: `${githubReposUrl}/${repo}${fileContentsUrl}`,
-	});
+	const url = repo
+		? `${githubUserReposUrl}/${repo}${fileContentsUrl}`
+		: githubReposUrl;
+
+	Object.assign(config, { url });
 
 	try {
 		const res = await axios(config);

@@ -3,10 +3,6 @@ import { getRepo, getRepoFile } from './git';
 const repo = process.argv.slice(2)[0];
 const fileContentsPath = process.argv.slice(2)[1]?.toLowerCase(); // ex. contents/package.json OR contents/some-path-to-file
 
-if (!repo) {
-	throw new Error('Repository argument must be passed!');
-}
-
 (async () => {
 	try {
 		const repoResult = await getRepo(repo, fileContentsPath);
