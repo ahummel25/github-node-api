@@ -23,7 +23,7 @@ export const getRepo = async (
 		? `${githubUserReposUrl}/${repo}${fileContentsUrl}`
 		: githubReposUrl;
 
-	Object.assign(config, { url });
+	config.url = url;
 
 	try {
 		const res = await axios(config);
@@ -43,9 +43,7 @@ export const getRepo = async (
 export const getRepoFile = async (
 	repoFileDownloadUrl: string,
 ): Promise<AxiosResponse> => {
-	Object.assign(config, {
-		url: repoFileDownloadUrl,
-	});
+	config.url = repoFileDownloadUrl;
 
 	try {
 		const res = await axios(config);
