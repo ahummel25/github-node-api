@@ -10,7 +10,7 @@
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [],
-    "author": "Andrew Hummel <andrew.hummel@inspire11.com>",
+    "author": "Andrew Hummel <ahummel25@gmail.com>",
     "license": "MIT",
     "devDependencies": {
         "@types/eslint": "^7.2.4",
