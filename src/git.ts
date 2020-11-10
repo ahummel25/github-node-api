@@ -14,7 +14,7 @@ export const getRepo = async (
 	fileContents?: string,
 ): Promise<AxiosResponse> => {
 	const fileContentsUrl = fileContents
-		? fileContents?.charAt(0) === '/'
+		? fileContents.charAt(0) === '/'
 			? fileContents
 			: `/${fileContents}`
 		: '';
