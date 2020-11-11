@@ -11,12 +11,12 @@ const config: AxiosRequestConfig = {
 
 export const getRepo = async (
 	repo?: string,
-	fileContents?: string,
+	repoFileToFetch?: string,
 ): Promise<AxiosResponse> => {
-	const fileContentsUrl = fileContents
-		? fileContents.charAt(0) === '/'
-			? fileContents
-			: `/${fileContents}`
+	const fileContentsUrl = repoFileToFetch
+		? repoFileToFetch.charAt(0) === '/'
+			? repoFileToFetch
+			: `/${repoFileToFetch}`
 		: '';
 
 	const url = repo
@@ -31,7 +31,9 @@ export const getRepo = async (
 		return res;
 	} catch (err) {
 		if (err.response?.status === 404) {
-			const message = fileContents ? `File ${fileContentsUrl}` : `Repo ${repo}`;
+			const message = repoFileToFetch
+				? `File ${fileContentsUrl}`
+				: `Repo ${repo}`;
 
 			throw new Error(`${message} not found`);
 		}

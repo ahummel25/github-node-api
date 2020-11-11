@@ -1,7 +1,7 @@
 import { getRepo, getRepoFile } from './git';
 
 const repo = process.argv.slice(2)[0]?.toLowerCase();
-const fileContentsPath = process.argv.slice(2)[1]?.toLowerCase(); // ex. contents/package.json OR contents/some-path-to-file
+const repoFileToFetch = process.argv.slice(2)[1]?.toLowerCase(); // ex. contents/package.json OR contents/some-path-to-file
 
 const isJSON = (str: string | Record<string, unknown>): boolean => {
 	if (typeof str === 'object') {
@@ -19,9 +19,9 @@ const isJSON = (str: string | Record<string, unknown>): boolean => {
 
 const main = async (): Promise<void> => {
 	try {
-		const repoResult = await getRepo(repo, fileContentsPath);
+		const repoResult = await getRepo(repo, repoFileToFetch);
 
-		if (fileContentsPath) {
+		if (repoFileToFetch) {
 			const { download_url: downloadUrl } = repoResult.data;
 
 			const fileResult = await getRepoFile(downloadUrl);
