@@ -1,6 +1,6 @@
 import { getRepo, getRepoFile } from './git';
 
-const repo = process.argv.slice(2)[0];
+const repo = process.argv.slice(2)[0]?.toLowerCase();
 const fileContentsPath = process.argv.slice(2)[1]?.toLowerCase(); // ex. contents/package.json OR contents/some-path-to-file
 
 (async () => {
