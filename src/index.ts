@@ -3,16 +3,22 @@ import { getRepo, getRepoFile } from './git';
 const repo = process.argv.slice(2)[0]?.toLowerCase();
 const fileContentsPath = process.argv.slice(2)[1]?.toLowerCase(); // ex. contents/package.json OR contents/some-path-to-file
 
-try {
-	const repoResult = await getRepo(repo, fileContentsPath);
+const main = async (): Promise<void> => {
+	try {
+		const repoResult = await getRepo(repo, fileContentsPath);
 
-	if (fileContentsPath) {
-		const fileResult = await getRepoFile(repoResult.data.download_url);
+		if (fileContentsPath) {
+			const { download_url: downloadUrl } = repoResult.data;
 
-		console.log(JSON.stringify(fileResult.data, null, 2));
-	} else {
-		console.log(JSON.stringify(repoResult.data, null, 2));
+			const fileResult = await getRepoFile(downloadUrl);
+
+			console.log(JSON.stringify(fileResult.data, null, 2));
+		} else {
+			console.log(JSON.stringify(repoResult.data, null, 2));
+		}
+	} catch (err) {
+		console.error(err.message);
 	}
-} catch (err) {
-	console.error(err.message);
-}
+};
+
+await main();
