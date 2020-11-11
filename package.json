@@ -3,8 +3,9 @@
     "version": "1.0.0",
     "description": "",
     "main": "src/index.ts",
+    "type": "module",
     "scripts": {
-        "api": "ts-node .",
+        "api": "node --experimental-specifier-resolution=node --loader ts-node/esm .",
         "lint": "eslint src/ --ext .js,.ts,.jsx,.tsx",
         "lint-fix": "eslint src/ --ext .js,.ts,.jsx,.tsx --fix",
         "test": "echo \"Error: no test specified\" && exit 1"

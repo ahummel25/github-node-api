@@ -5,15 +5,15 @@
         "alwaysStrict": true,
         "esModuleInterop": true,
         "lib": [
-            "es2020"
+            "esnext"
         ],
-        "module": "commonjs",
+        "module": "esnext",
         "moduleResolution": "node",
         "noImplicitAny": true,
         "outDir": "dist",
         "sourceMap": true,
         "strictNullChecks": true,
-        "target": "es2020"
+        "target": "esnext"
     },
     "exclude": [
         "node_modules"
