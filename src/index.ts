@@ -15,6 +15,6 @@ const fileContentsPath = process.argv.slice(2)[1]?.toLowerCase(); // ex. content
 			console.log(JSON.stringify(repoResult.data, null, 2));
 		}
 	} catch (err) {
-		console.error(err);
+		console.error(err.message);
 	}
 })();
