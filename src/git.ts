@@ -30,7 +30,7 @@ export const getRepo = async (
 
 		return res;
 	} catch (err) {
-		if (err.response?.status === 404) {
+		if (err.response.status === 404) {
 			const message = repoFileToFetch
 				? `File ${fileContentsUrl}`
 				: `Repo ${repo}`;
