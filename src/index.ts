@@ -1,15 +1,16 @@
 import { getRepo, getRepoFile } from './git';
 
-const repo = process.argv.slice(2)[0]?.toLowerCase();
-const repoFileToFetch = process.argv.slice(2)[1]?.toLowerCase(); // ex. contents/package.json OR contents/some-path-to-file
+const args = process.argv.slice(2);
+const repo = args[0]?.toLowerCase();
+const repoFileToFetch = args[1]?.toLowerCase(); // ex. contents/package.json OR contents/some-path-to-file
 
-const isJSON = (str: string | Record<string, unknown>): boolean => {
-	if (typeof str === 'object') {
+const isJSON = (val: string | Record<string, unknown>): boolean => {
+	if (typeof val === 'object') {
 		return true;
 	}
 
 	try {
-		JSON.parse(str);
+		JSON.parse(val);
 	} catch (e) {
 		return false;
 	}
