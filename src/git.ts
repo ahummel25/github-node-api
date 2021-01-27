@@ -1,4 +1,5 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
+import { StatusCodes } from 'http-status-codes';
 
 const githubReposUrl = 'https://api.github.com/user/repos';
 const githubUserReposUrl = 'https://api.github.com/repos/ahummel25';
@@ -30,7 +31,7 @@ export const getRepo = async (
 
 		return res;
 	} catch (err) {
-		if (err.response.status === 404) {
+		if (err.response.status === StatusCodes.NOT_FOUND) {
 			const message = repoFileToFetch
 				? `File ${fileContentsUrl}`
 				: `Repo ${repo}`;
