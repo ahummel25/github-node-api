@@ -32,6 +32,10 @@ module.exports = {
 	  "plugin:prettierx/standardx"
 	],
 	rules: {
+	  "comma-dangle": [
+		"error",
+		"never"
+	  ],
 	  "prettierx/options": [
 		2,
 		{
@@ -40,7 +44,6 @@ module.exports = {
 		  semi: true,
 		  singleQuote: true,
 		  spaceBeforeFunctionParen: true,
-		  trailingComma: "all",
 		}
 	  ],
 	  "linebreak-style": "off",
