@@ -41,7 +41,6 @@ module.exports = {
 		  singleQuote: true,
 		  spaceBeforeFunctionParen: true,
 		  trailingComma: "all",
-		  useTabs: true
 		}
 	  ],
 	  "linebreak-style": "off",

@@ -1,25 +1,25 @@
 {
-    "compilerOptions": {
-        "allowJs": false,
-        "allowSyntheticDefaultImports": true,
-        "alwaysStrict": true,
-        "esModuleInterop": true,
-        "lib": [
-            "esnext"
-        ],
-        "module": "esnext",
-        "moduleResolution": "node",
-        "noImplicitAny": true,
-        "outDir": "dist",
-        "sourceMap": true,
-        "strictNullChecks": true,
-        "target": "esnext"
-    },
-    "exclude": [
-        "node_modules"
-    ],
-    "include": [
-        "**/*.js",
-        "**/*.ts"
-    ]
+	"compilerOptions": {
+		"allowJs": false,
+		"allowSyntheticDefaultImports": true,
+		"alwaysStrict": true,
+		"esModuleInterop": true,
+		"lib": [
+			"esnext"
+		],
+		"module": "esnext",
+		"moduleResolution": "node",
+		"noImplicitAny": true,
+		"outDir": "dist",
+		"sourceMap": true,
+		"strictNullChecks": true,
+		"target": "esnext"
+	},
+	"exclude": [
+		"node_modules"
+	],
+	"include": [
+		"**/*.js",
+		"**/*.ts"
+	]
 }
